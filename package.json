@@ -1,0 +1,35 @@
+{
+  "name": "gatsby-reproduction-dsg-mdx-rehype",
+  "version": "1.0.0",
+  "description": "Reproduction Repo for using DSG and rehype plugins with MDX",
+  "main": "index.js",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "serve": "gatsby serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulieScanlon/gatsby-reproduction-dsg-mdx-rehype.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulieScanlon/gatsby-reproduction-dsg-mdx-rehype/issues"
+  },
+  "homepage": "https://github.com/PaulieScanlon/gatsby-reproduction-dsg-mdx-rehype#readme",
+  "dependencies": {
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "gatsby": "^4.19.2",
+    "gatsby-plugin-mdx": "^3.19.0",
+    "gatsby-source-filesystem": "^4.19.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rehype-autolink-headings": "4.0.0",
+    "rehype-slug": "4.0.0"
+  }
+}
