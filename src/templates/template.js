@@ -4,17 +4,26 @@ import { graphql, Link } from 'gatsby';
 const Page = ({
   data: {
     mdx: {
-      frontmatter: { title }
+      frontmatter: { title },
+      tableOfContents
     }
   },
   children
 }) => {
-  console.log(children);
   return (
     <main>
       <Link to="/">Back</Link>
       <h1>{title}</h1>
       {children}
+      <ul>
+        {tableOfContents && tableOfContents.items
+          ? tableOfContents.items.map((item, index) => {
+              const { title } = item;
+              return <li>{title}</li>;
+            })
+          : null}
+      </ul>
+      <pre>{JSON.stringify(tableOfContents)}</pre>
     </main>
   );
 };
@@ -25,6 +34,7 @@ export const query = graphql`
       frontmatter {
         title
       }
+      tableOfContents
     }
   }
 `;
