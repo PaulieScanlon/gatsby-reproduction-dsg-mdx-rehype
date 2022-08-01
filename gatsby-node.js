@@ -22,6 +22,9 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
           fields {
             slug
           }
+          internal {
+            contentFilePath
+          }
         }
       }
     }
@@ -35,7 +38,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
     createPage({
       path: slug,
-      component: path.join(__dirname, `src/templates/template.js`),
+      component: `${path.resolve(`./src/templates/template.js`)}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         id: id
       },

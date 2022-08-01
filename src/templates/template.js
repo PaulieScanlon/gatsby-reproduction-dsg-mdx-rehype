@@ -1,23 +1,20 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { MDXProvider } from '@mdx-js/react';
 
 const Page = ({
   data: {
     mdx: {
-      frontmatter: { title },
-      body
+      frontmatter: { title }
     }
-  }
+  },
+  children
 }) => {
+  console.log(children);
   return (
     <main>
       <Link to="/">Back</Link>
       <h1>{title}</h1>
-      <MDXProvider>
-        <MDXRenderer>{body}</MDXRenderer>
-      </MDXProvider>
+      {children}
     </main>
   );
 };
@@ -28,7 +25,6 @@ export const query = graphql`
       frontmatter {
         title
       }
-      body
     }
   }
 `;
