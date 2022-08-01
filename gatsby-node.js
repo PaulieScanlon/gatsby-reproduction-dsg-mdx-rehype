@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
       context: {
         id: id
       },
-      defer: false
+      defer: true
     });
   });
 };
